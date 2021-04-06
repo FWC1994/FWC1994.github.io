@@ -1,6 +1,7 @@
 ---
 title: 由DOM事件流到事件代理
 date: 2019-11-11 07:57:49
+id: from-dom-to-event
 tags: 
 - DOM
 - 事件流

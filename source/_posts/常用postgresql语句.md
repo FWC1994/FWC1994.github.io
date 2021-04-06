@@ -1,6 +1,7 @@
 ---
 title: 常用postgresql语句
 date: 2019-01-11 11:45:49
+id: common-postgresql
 tags: Postgresql
 categories: 
 - 数据库

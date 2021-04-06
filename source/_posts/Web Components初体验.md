@@ -1,6 +1,7 @@
 ---
 title: Web Components初体验
 date: 2019-11-11 07:57:49
+id: web-component
 categories: 
 - 前端
 ---

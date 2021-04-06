@@ -1,6 +1,7 @@
 ---
 title: React Native 实现文件下载
 date: 2021-02-05 00:00:00
+id: react-native/file-download
 categories: 
 - React Native
 ---

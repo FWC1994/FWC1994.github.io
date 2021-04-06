@@ -1,7 +1,7 @@
 ---
 title: WebGIS裁剪算法-线裁剪多边形
 date: 2018-06-28
-id: 'webgis-clip'
+id: webgis-clip
 tags: 
 - 多边形裁剪
 - Turf.js

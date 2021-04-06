@@ -19,7 +19,7 @@ baidusitemap:
   path: baidusitemap.xml
 url: http://fengwc.cn
 root: /
-permalink: article/:title/
+permalink: article/:id/
 permalink_defaults:
 
 # Directory

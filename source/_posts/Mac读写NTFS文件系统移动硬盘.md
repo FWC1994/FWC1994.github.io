@@ -1,6 +1,7 @@
 ---
 title: Mac读写NTFS文件系统移动硬盘
 date: 2019-12-03 12:00:49
+id: mac-read-ntfs
 tags: 
 - Mac
 - NTFS

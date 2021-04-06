@@ -1,6 +1,7 @@
 ---
 title: React Native混合开发详解
 date: 2021-01-05 00:00:00
+id: react-native/mix-dev
 categories: 
 - React Native
 ---

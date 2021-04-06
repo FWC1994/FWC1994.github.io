@@ -1,6 +1,7 @@
 ---
 title: 图片转Base64字符串
 date: 2018-11-02 00:41:00
+id: image-to-base64
 tags: 
 - Base64
 categories: 

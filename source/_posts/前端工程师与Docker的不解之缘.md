@@ -1,6 +1,7 @@
 ---
 title: 前端工程师与Docker的不解之缘
 date: 2020-08-18 00:00:00
+id: docker-fe
 categories: 
 - Docker
 ---

@@ -1,6 +1,7 @@
 ---
 title: 开始 React Native 开发之旅
 date: 2020-10-22 00:00:00
+id: react-native/start
 categories: 
 - React Native
 ---

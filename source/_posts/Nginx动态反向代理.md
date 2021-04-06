@@ -1,6 +1,7 @@
 ---
 title: Nginx动态反向代理
 date: 2019-11-15 07:20:29
+id: nginx-proxy
 tags: 
 - 反向代理
 categories: 

@@ -1,6 +1,7 @@
 ---
 title: 搭建基于Vue的Mapbox GL开发框架
 date: 2018-11-18 15:36:45
+id: mapboxgl-load-online-tile
 tags: 
 - Mapbox GL
 - Vue

@@ -1,6 +1,7 @@
 ---
 title: POST请求的编码方式
 date: 2020-02-25 08:03:45
+id: post-content-type
 tags: 
 - POST
 categories: 

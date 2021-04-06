@@ -1,6 +1,7 @@
 ---
 title: 【译】HTTP/2 为更快速的网站而生
 date: 2020-03-09 01:22:48
+id: http2-faster-web
 tags: 
 - HTTP/2
 categories: 

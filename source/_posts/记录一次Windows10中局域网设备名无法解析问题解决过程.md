@@ -1,6 +1,7 @@
 ---
 title: 记录一次Windows10中局域网设备名无法解析问题解决过程
 date: 2019-11-18 17:01:29
+id: fix-win10-dns
 tags: 
 - mDNS
 - 零配置网络服务

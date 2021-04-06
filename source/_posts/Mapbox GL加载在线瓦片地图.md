@@ -1,6 +1,7 @@
 ---
 title: Mapbox GL加载在线瓦片地图
 date: 2018-11-18 17:26:45
+id: vue-mapboxgl
 tags: 
 - Mapbox GL
 categories: 

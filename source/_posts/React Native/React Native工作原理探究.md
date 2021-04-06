@@ -1,6 +1,7 @@
 ---
 title: React Native工作原理探究
 date: 2020-11-14 00:00:00
+id: react-native/learn
 categories: 
 - React Native
 ---

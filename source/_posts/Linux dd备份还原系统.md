@@ -1,6 +1,7 @@
 ---
 title: Linux dd备份还原系统
 date: 2019-09-01 22:57:49
+id: linux-dd
 tags: Linux
 categories: 
 - Linux
