@@ -83,23 +83,23 @@ li {
 }
 
 .icon.sphere {
-    background-image: url(/sphere.8591c7ce.svg);
+    background-image: url(./sphere.8591c7ce.svg);
 }
 
 .icon.cylinder {
-    background-image: url(/cylinder.77bf0f6c.svg);
+    background-image: url(./cylinder.77bf0f6c.svg);
 }
 
 .icon.plane {
-    background-image: url(/plane.f6ba1846.svg);
+    background-image: url(./plane.f6ba1846.svg);
 }
 
 .icon.line {
-    background-image: url(/line.85bae556.svg);
+    background-image: url(./line.85bae556.svg);
 }
 
 .icon.rect {
-    background-image: url(/rect.d697229a.svg);
+    background-image: url(./rect.d697229a.svg);
 }
 
 .step-state.active {
