@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="三点估算,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="开发人员在进行开发工作之前都需要给出一个工作量的评估，以便后续的工作任务可以基于该时间进行排期。大多数开发人员评估工作量主要是基于过往的工作经验拍脑袋决定，并会给自己预留出一定的Buffer时间。这样可能的问题就是过度依赖个人的开发经验，且Buffer时间的没办法量化。我们需要一种科学的工作量评估方法——三点估算。">
+<meta name="keywords" content="三点估算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="三点估算评估开发工作量">
+<meta property="og:url" content="http://fengwc.cn/article/three-evaluate/index.html">
+<meta property="og:site_name" content="╰ 羽翼 ╮的博客">
+<meta property="og:description" content="开发人员在进行开发工作之前都需要给出一个工作量的评估，以便后续的工作任务可以基于该时间进行排期。大多数开发人员评估工作量主要是基于过往的工作经验拍脑袋决定，并会给自己预留出一定的Buffer时间。这样可能的问题就是过度依赖个人的开发经验，且Buffer时间的没办法量化。我们需要一种科学的工作量评估方法——三点估算。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://fengwc.cn/images/article/三点估算评估开发工作量/1.jpg">
+<meta property="og:image" content="http://fengwc.cn/images/article/三点估算评估开发工作量/2.png">
+<meta property="og:updated_time" content="2021-11-16T11:38:42.693Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="三点估算评估开发工作量">
+<meta name="twitter:description" content="开发人员在进行开发工作之前都需要给出一个工作量的评估，以便后续的工作任务可以基于该时间进行排期。大多数开发人员评估工作量主要是基于过往的工作经验拍脑袋决定，并会给自己预留出一定的Buffer时间。这样可能的问题就是过度依赖个人的开发经验，且Buffer时间的没办法量化。我们需要一种科学的工作量评估方法——三点估算。">
+<meta name="twitter:image" content="http://fengwc.cn/images/article/三点估算评估开发工作量/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://fengwc.cn/article/three-evaluate/">
+
+
+
+
+
+  <title>三点估算评估开发工作量 | ╰ 羽翼 ╮的博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bdb262d9ddc529cb6f264ae49609b006";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">╰ 羽翼 ╮的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fengwc.cn/article/three-evaluate/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="羽翼">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="╰ 羽翼 ╮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">三点估算评估开发工作量</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-02-23T00:00:00+08:00">
+                2021-02-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/项目管理/" itemprop="url" rel="index">
+                    <span itemprop="name">项目管理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/article/three-evaluate/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/article/three-evaluate/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/article/three-evaluate/" class="leancloud_visitors" data-flag-title="三点估算评估开发工作量">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="../../images/article/三点估算评估开发工作量/1.jpg" alt="封面"><br>开发人员在进行开发工作之前都需要给出一个工作量的评估，以便后续的工作任务可以基于该时间进行排期。大多数开发人员评估工作量主要是基于过往的工作经验拍脑袋决定，并会给自己预留出一定的Buffer时间。这样可能的问题就是过度依赖个人的开发经验，且Buffer时间的没办法量化。我们需要一种科学的工作量评估方法——三点估算。</p>
+<a id="more"></a>
+<h2 id="详解三点估算"><a href="#详解三点估算" class="headerlink" title="详解三点估算"></a>详解三点估算</h2><h3 id="什么是三点估算"><a href="#什么是三点估算" class="headerlink" title="什么是三点估算"></a>什么是三点估算</h3><p>先来介绍一下什么是三点估算法：<br>三点法评估需要将一个任务的时间评估分成：最乐观时间、最可能时间、最悲观时间。好比上班路上花费的时间，一般最可能花费时间是30min；乐观情况不堵车都是绿灯只需要20min，如果悲观考虑到可能赶上上班高峰，路上很堵则需要50min才能到公司。<br>将工作量模拟成正态分布的形式。那么就可以得到如下的公式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">期望值μ = (最乐观时间 + 4 x 最可能时间 + 最悲观时间) ➗ 6</span><br><span class="line">标准差σ= (最悲观时间 - 最乐观时间) ➗ 6</span><br></pre></td></tr></table></figure></p>
+<p><img src="../../images/article/三点估算评估开发工作量/2.png" alt="正态分布"><br>通过计算得到的期望值μ是一个预期工作的持续时间，标准差σ代表由于开发过程中的不确定因素导致实际工期和期望工期的浮动时间。</p>
+<h3 id="Buffer时间的设定"><a href="#Buffer时间的设定" class="headerlink" title="Buffer时间的设定"></a>Buffer时间的设定</h3><p>我们先来回答一个问题：我们在计算得到的【期望值μ】之前完成开发工作的任务的概率是多少——没错，不论开发经验是否丰富都只有50%！<br>明显如果你给出一个工作量评估并跟PM说我只有50%的可能性完成，他可能会告诉你，我也有50%的可能性不给你发项目奖金。<br>学过概率论正态分布我们会知道点落在各个区间的概率存在如下规律：</p>
+<table>
+<thead>
+<tr>
+<th>标准差区间</th>
+<th>区间概率</th>
+<th>完成概率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1倍标准差</td>
+<td>68.3</td>
+<td>84.15</td>
+</tr>
+<tr>
+<td>2倍标准差</td>
+<td>95.4</td>
+<td>97.7</td>
+</tr>
+<tr>
+<td>3倍标准差</td>
+<td>99.7</td>
+<td>99.85</td>
+</tr>
+</tbody>
+</table>
+<p>因此我们我们可以通过在计算得到的期望值的基础上适当增加标准差时间作为Buffer，来保证我们的工作可以按时交付。</p>
+<h3 id="关于三点估算的思考"><a href="#关于三点估算的思考" class="headerlink" title="关于三点估算的思考"></a>关于三点估算的思考</h3><ul>
+<li>工作评估粒度问题<br>在评估前我们都需要对当前任务进行拆分，使用三点估算我们不需要粒度拆分的很小，因为最初没办法面面俱到考虑到所有功能点，粒度维持在一个中小型独立的功能模块为宜。</li>
+<li>标准差的理解<br>数学上标准差代表着数据的稳定性，标准差越大数据波动越大，在三点估算中标准差也反映着开发者的对于当前工作熟练程度，因此，越是经验丰富在熟悉的领域最终的标准差就会越小，陌生的领域也会计算得到较大的Buffer时间，保证可以如期交付。</li>
+</ul>
+<h3 id="为什么使用三点评估"><a href="#为什么使用三点评估" class="headerlink" title="为什么使用三点评估"></a>为什么使用三点评估</h3><p>三点评估在评估过程中考虑到了项目中不确定性的风险，且有概率统计的依据，保证了评估的准确性，同时该方法计算简单、容易理解在实际开发工作中的使用门槛还是较低的。</p>
+<h2 id="其他评估方法"><a href="#其他评估方法" class="headerlink" title="其他评估方法"></a>其他评估方法</h2><p>除了三点评估，下面的一些方法也常常用来进行工作量的评估：</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+<th>评价</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类比法</td>
+<td>和过往类似项目进行类比估算</td>
+<td>不同项目之间往往存在较大差异，存在较大风险</td>
+</tr>
+<tr>
+<td>专家推断</td>
+<td>行业内经验较丰富人员的给出指导性意见</td>
+<td>过度依赖个人经验，不具备普适性</td>
+</tr>
+<tr>
+<td>参数估算</td>
+<td>根据任务进行中特定材料的耗费情况进行估算</td>
+<td>不适用于软件开发</td>
+</tr>
+<tr>
+<td>自下而上估算</td>
+<td>将任务拆分成一个一个细致的工作包，并单独评估，最终汇总</td>
+<td>最准确，但是评估成本较高，在开发中适用于小型简单的任务</td>
+</tr>
+</tbody>
+</table>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>不要轻视启动阶段的计划评估工作，这一过程也是对需求深入理解的过程，从而规避复工、回炉重造的风险。一个好的工作量评估，需要建立在对当前的需求足够了解，可以识别潜在风险的基础上。评估中往往允许我们合理加入一定的Buffer时间，因为一旦延期，你可能影响到的是后续他人的工作计划，从而影响整体的交付时间。管理规范的团队延期后往往会组织复盘会，所花费的代价远不止少评估了工作量这么简单。当然也为了避免延期预留过多的Buffer时间，造成人力资源的浪费。最后分享帕金森定律中最常被引用的一句话：</p>
+<blockquote>
+<p>Work expands to fill the time available for its completion.<br>你可以用来完成工作的时间有多少，你的工作就会拖延、膨胀、复杂到让你足以填满那段时间为止。</p>
+</blockquote>
+<p>希望使用三点评估法可以帮助你合理科学的评估开发工作量。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/三点估算/" rel="tag"># 三点估算</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/article/react-native/file-download/" rel="next" title="React Native 实现文件下载">
+                <i class="fa fa-chevron-left"></i> React Native 实现文件下载
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/article/survivorship-bias/" rel="prev" title="幸存者偏差-做自己世界的幸存者">
+                幸存者偏差-做自己世界的幸存者 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="羽翼">
+            
+              <p class="site-author-name" itemprop="name">羽翼</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/FWC1994" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:fengweichong@foxmail.com" target="_blank" title="E-Mail" rel="external nofollow noopener noreferrer">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#详解三点估算"><span class="nav-number">1.</span> <span class="nav-text">详解三点估算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是三点估算"><span class="nav-number">1.1.</span> <span class="nav-text">什么是三点估算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Buffer时间的设定"><span class="nav-number">1.2.</span> <span class="nav-text">Buffer时间的设定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于三点估算的思考"><span class="nav-number">1.3.</span> <span class="nav-text">关于三点估算的思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么使用三点评估"><span class="nav-number">1.4.</span> <span class="nav-text">为什么使用三点评估</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他评估方法"><span class="nav-number">2.</span> <span class="nav-text">其他评估方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">羽翼</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io" rel="external nofollow noopener noreferrer">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow noopener noreferrer">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: '17697865',
+            repo: 'https://github.com/FWC1994/blog-comments.git',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '9017f7e2af17a37e2ad494792dd4fd694c83e300',
+            
+                client_id: 'f85daf3cc24e241008ea'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("4lauEwpjNNiYBqT8Kwi2hNND-gzGzoHsz", "iKIPdCQxkDdCSynHfPQdRQ8B");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
