@@ -154,7 +154,7 @@ links_layout: block
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-#avatar: /images/avatar.gif
+avatar: /images/avatar.png
 
 # Table Of Contents in the Sidebar
 toc:
@@ -408,9 +408,9 @@ gitment:
   cleanly: false # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
   github_user: 17697865 # MUST HAVE, Your Github ID
-  github_repo: https://github.com/FWC1994/blog-comments.git # MUST HAVE, The repo you use to store Gitment comments
-  client_id: f85daf3cc24e241008ea # MUST HAVE, Github client id for the Gitment
-  client_secret: 9017f7e2af17a37e2ad494792dd4fd694c83e300 # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  github_repo: https://github.com/FWC1994/FWC1994.github.io.git # MUST HAVE, The repo you use to store Gitment comments
+  client_id: 924450cb5de7299df219 # MUST HAVE, Github client id for the Gitment
+  client_secret: 625230d676098da13bc1f539c1c63e85c586568d # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
@@ -531,7 +531,7 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   app_id: 4lauEwpjNNiYBqT8Kwi2hNND-gzGzoHsz #<app_id>
   app_key: iKIPdCQxkDdCSynHfPQdRQ8B #<app_key>
 
@@ -539,10 +539,10 @@ leancloud_visitors:
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
 # visit https://firebase.google.com/docs/firestore/ to get more information about firestore
 firestore:
-  enable: false
+  enable: true
   collection: articles #required, a string collection name to access firestore database
-  apiKey: #required
-  projectId: #required
+  apiKey: AIzaSyByShrHti1s9tirdOByqn0mm3NSFd84ZXg #required
+  projectId: blog-65fed #required
   bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
 
 # Show PV/UV of the website/page with busuanzi.
