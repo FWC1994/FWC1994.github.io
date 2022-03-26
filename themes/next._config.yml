@@ -35,7 +35,7 @@ favicon:
   #ms_browserconfig: /images/browserconfig.xml
 
 # Set default keywords (Use a comma to separate)
-keywords: "Hexo, NexT"
+keywords: "GIS开发, 冯炜翀, 项目管理, 前端, 前端开发"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -54,11 +54,11 @@ footer:
   copyright:
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
-  powered: true
+  powered: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
     version: true
   # -------------------------------------------------------------
@@ -93,12 +93,12 @@ index_with_subtitle: false
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, question icon will be loaded.
 menu:
   home: / || home
-  #about: /about/ || user
+  # about: /about/ || user
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
-  #sitemap: /sitemap.xml || sitemap
+  # sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
@@ -236,10 +236,10 @@ post_wordcount:
   separated_meta: true
 
 # Wechat Subscriber
-#wechat_subscriber:
-  #enabled: true
-  #qcode: /path/to/your/wechatqcode ex. /uploads/wechat-qcode.jpg
-  #description: ex. subscribe to my blog by scanning my public wechat account
+wechat_subscriber:
+  enabled: true
+  qcode: /images/qrcode_for_gh_49bc6e7103d9_258.jpg
+  description: 欢迎关注微信公众号
 
 # Reward
 #reward_comment: Donate comment here
@@ -359,10 +359,10 @@ baidu_analytics: bdb262d9ddc529cb6f264ae49609b006
 #duoshuo_shortname:
 
 # Disqus
-disqus:
-  enable: false
-  shortname:
-  count: true
+# disqus:
+#   enable: false
+#   shortname:
+#   count: true
 
 # Hypercomments
 #hypercomments_id:
@@ -405,12 +405,12 @@ gitment:
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
   lazy: false # Comments lazy loading with a button
-  cleanly: false # Hide 'Powered by ...' on footer, and more
+  cleanly: true # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
-  github_user: 17697865 # MUST HAVE, Your Github ID
-  github_repo: https://github.com/FWC1994/FWC1994.github.io.git # MUST HAVE, The repo you use to store Gitment comments
-  client_id: 924450cb5de7299df219 # MUST HAVE, Github client id for the Gitment
-  client_secret: 625230d676098da13bc1f539c1c63e85c586568d # EITHER this or proxy_gateway, Github access secret token for the Gitment
+  github_user: FWC1994 # MUST HAVE, Your Github ID
+  github_repo: blog-comments # MUST HAVE, The repo you use to store Gitment comments
+  client_id: 3233270550ea9cd8d393 # MUST HAVE, Github client id for the Gitment
+  client_secret: d45a4fa3ab394c095942f66a24fd68259a3b71f0 # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
   redirect_protocol: # Protocol of redirect_uri with force_redirect_protocol when mint enabled
 
@@ -430,7 +430,7 @@ gitment:
 #add_this_id:
 
 # Share
-#duoshuo_share: true
+# duoshuo_share: true
 
 # NeedMoreShare2
 # This plugin is a pure javascript sharing lib which is useful in China.
@@ -446,7 +446,7 @@ gitment:
 needmoreshare2:
   enable: false
   postbottom:
-    enable: false
+    enable: true
     options:
       iconStyle: box
       boxForm: horizontal
@@ -530,20 +530,20 @@ rating:
 
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
-leancloud_visitors:
-  enable: false
-  app_id: 4lauEwpjNNiYBqT8Kwi2hNND-gzGzoHsz #<app_id>
-  app_key: iKIPdCQxkDdCSynHfPQdRQ8B #<app_key>
+# leancloud_visitors:
+  # enable: false
+  # app_id: 4lauEwpjNNiYBqT8Kwi2hNND-gzGzoHsz #<app_id>
+  # app_key: iKIPdCQxkDdCSynHfPQdRQ8B #<app_key>
 
 # Another tool to show number of visitors to each article.
 # visit https://console.firebase.google.com/u/0/ to get apiKey and projectId
 # visit https://firebase.google.com/docs/firestore/ to get more information about firestore
-firestore:
-  enable: true
-  collection: articles #required, a string collection name to access firestore database
-  apiKey: AIzaSyByShrHti1s9tirdOByqn0mm3NSFd84ZXg #required
-  projectId: blog-65fed #required
-  bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
+# firestore:
+#   enable: true
+#   collection: articles #required, a string collection name to access firestore database
+#   apiKey: AIzaSyByShrHti1s9tirdOByqn0mm3NSFd84ZXg #required
+#   projectId: blog-65fed #required
+#   bluebird: false #enable this if you want to include bluebird 3.5.1(core version) Promise polyfill
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
@@ -572,7 +572,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
