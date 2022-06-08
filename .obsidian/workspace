@@ -1,0 +1,105 @@
+{
+  "main": {
+    "id": "099ff0ffbb080369",
+    "type": "split",
+    "children": [
+      {
+        "id": "0138b02e24c307c4",
+        "type": "leaf",
+        "state": {
+          "type": "graph",
+          "state": {}
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1e6e3ce6b863b0b7",
+    "type": "split",
+    "children": [
+      {
+        "id": "b20301241f7eb807",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "571efc9c1f634970",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "61fa0290b4e1c8c0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#多边形裁剪",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8c85387ef89a8548",
+    "type": "split",
+    "children": [
+      {
+        "id": "3850152bcd4303cf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3a4a1096129194ff",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "144fd18119d1853b",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "active": "0138b02e24c307c4",
+  "lastOpenFiles": [
+    "source/_posts/Leaflet.draw 无法编辑multipolygon类型多边形 解决方法.md",
+    "source/_posts/聊一聊居家办公.md",
+    "source/_posts/前端工程师与Docker的不解之缘.md",
+    "source/_posts/三点估算评估开发工作量.md",
+    "source/_posts/项目管理—敏捷开发.md",
+    "source/_posts/记录一次Windows10中局域网设备名无法解析问题解决过程.md",
+    "source/_posts/空间数据圆转多边形.md",
+    "source/_posts/思维的乐趣—王小波.md",
+    "source/_posts/幸存者偏差-做自己世界的幸存者.md",
+    "source/_posts/聊一聊单元测试.md"
+  ]
+}

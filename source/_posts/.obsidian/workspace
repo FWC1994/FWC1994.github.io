@@ -1,0 +1,100 @@
+{
+  "main": {
+    "id": "0bef78893b35ad8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "579f38f02d116bb9",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "图片转Base64字符串.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "838c4a3ae0901425",
+    "type": "split",
+    "children": [
+      {
+        "id": "5699e4fb793eb52d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f2709c135174a22d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "7dbde2f566c8ec51",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a0202845090fc187",
+    "type": "split",
+    "children": [
+      {
+        "id": "73e2efb7dcc7c75c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9fa7132f6a60871a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "图片转Base64字符串.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "579f38f02d116bb9",
+  "lastOpenFiles": [
+    "图片转Base64字符串.md",
+    "前端工程师与Docker的不解之缘.md",
+    "思维的乐趣—王小波.md",
+    "别让猴子跳回背上—读书笔记.md",
+    "【译】HTTP2 为更快速的网站而生.md",
+    "常用postgresql语句.md",
+    "搭建基于Vue的Mapbox GL开发框架.md",
+    "记录一次Windows10中局域网设备名无法解析问题解决过程.md"
+  ]
+}
