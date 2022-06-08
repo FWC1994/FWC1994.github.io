@@ -259,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fengwc.cn/article/from-dom-to-event/">
+    <link itemprop="mainEntityOfPage" href="http://fengwc.cn/article/nginx-proxy/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="羽翼">
@@ -278,7 +278,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/article/from-dom-to-event/" itemprop="url">由DOM事件流到事件代理</a></h2>
+                <a class="post-title-link" href="/article/nginx-proxy/" itemprop="url">Nginx动态反向代理</a></h2>
         
 
         <div class="post-meta">
@@ -290,8 +290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-11T07:57:49+08:00">
-                2019-11-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-15T07:20:29+08:00">
+                2019-11-15
               </time>
             
 
@@ -313,8 +313,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
+                  <a href="/categories/Nginx/" itemprop="url" rel="index">
+                    <span itemprop="name">Nginx</span>
                   </a>
                 </span>
 
@@ -351,17 +351,17 @@
 
       
         
-          <p>在开发一个“点击按钮弹出popup”功能组件的时候需要点击空白位置自动关闭popup，通常的做法是给body绑定一个click事件，然后去关闭面板。但是会发现给body绑定了事件后，点击按钮后无法打开popup面板，发现原来是打开面板后立刻触发了body的click事件，导致popup面板立刻被关闭了。深入了解了一下DOM的事件流，找到了问题的原因，解决的办法也很简单,阻止事件冒泡。</p>
+          <p>Nginx的反向代理对于大多数前端开发工程师再熟悉不过了，通过代理服务器的方式接收外部http请求，然后转发给内部的服务器。要进行反向代理需要预先知道服务端想要暴露的服务以及端口，然后在Nginx配置文件中添加对应的配置信息。但是如果后端的服务不是固定的，可以动态添加的，也就是说nginx要根据请求uri不同，将请求转发到不同的服务，但是又不想每次都去修改配置文件该如何去处理呢？<br>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/article/from-dom-to-event/#more" rel="contents">
+            <a class="btn" href="/article/nginx-proxy/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -508,6 +508,152 @@
         
       
     </p></div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fengwc.cn/article/from-dom-to-event/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="羽翼">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="╰ 羽翼 ╮的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/article/from-dom-to-event/" itemprop="url">由DOM事件流到事件代理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-11T07:57:49+08:00">
+                2019-11-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在开发一个“点击按钮弹出popup”功能组件的时候需要点击空白位置自动关闭popup，通常的做法是给body绑定一个click事件，然后去关闭面板。但是会发现给body绑定了事件后，点击按钮后无法打开popup面板，发现原来是打开面板后立刻触发了body的click事件，导致popup面板立刻被关闭了。深入了解了一下DOM的事件流，找到了问题的原因，解决的办法也很简单,阻止事件冒泡。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/article/from-dom-to-event/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
     
     
     
@@ -1560,152 +1706,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fengwc.cn/article/image-to-base64/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="羽翼">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="╰ 羽翼 ╮的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/article/image-to-base64/" itemprop="url">图片转Base64字符串</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-02T00:41:00+08:00">
-                2018-11-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/前端/" itemprop="url" rel="index">
-                    <span itemprop="name">前端</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>有些时候，我们需要将图片转换成base64字符串的形式直接插入到前端页面中或者保存起来，所以在这里总结一下图片转base64的方法以及如何对图片进行一定的压缩处理<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/article/image-to-base64/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1758,7 +1758,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
